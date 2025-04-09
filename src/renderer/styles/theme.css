@@ -1,0 +1,108 @@
+/* Define global variables for the theme */
+:root {
+  --primary-color: #007bff; /* Blue */
+  --secondary-color: #6c757d; /* Muted Grey */
+  --background-color: #f8f9fa; /* Light Grey */
+  --card-background-color: #ffffff; /* White */
+  --text-color: #212529; /* Dark Grey */
+  --border-color: #dee2e6; /* Light Border */
+  --hover-color: #0056b3; /* Darker Blue */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Subtle Shadow */
+}
+
+/* Apply global styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Utility classes */
+.container {
+  padding: 16px;
+}
+
+.card {
+  background-color: var(--card-background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.button:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--primary-color);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: var(--secondary-color);
+  margin-bottom: 24px;
+}
+
+.tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.tab {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tab:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.activeTab {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+}
+
+.footer {
+  font-size: 14px;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-top: 24px;
+}

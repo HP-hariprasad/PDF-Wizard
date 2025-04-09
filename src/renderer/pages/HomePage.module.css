@@ -1,0 +1,96 @@
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f9fa; /* Light background */
+  color: #212529; /* Dark text */
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #343a40; /* Darker text for the title */
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #6c757d; /* Muted text for the subtitle */
+}
+
+.tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #dee2e6; /* Light border for tabs */
+  padding-bottom: 8px;
+}
+
+.tab {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #495057; /* Neutral text color */
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tab:hover {
+  background-color: #e9ecef; /* Light hover effect */
+  color: #212529;
+}
+
+.activeTab {
+  background-color: #007bff; /* Primary color for active tab */
+  color: #fff;
+  font-weight: bold;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #dee2e6; /* Light border */
+  border-radius: 8px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 600px;
+  width: 100%;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #343a40;
+}
+
+.card p {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 16px;
+}
+
+.footer {
+  font-size: 14px;
+  color: #adb5bd; /* Muted footer text */
+  text-align: center;
+  margin-top: 24px;
+}

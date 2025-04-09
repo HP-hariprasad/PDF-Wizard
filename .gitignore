@@ -1,0 +1,43 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Build output
+dist/
+out/
+build/
+
+# Vite cache
+.vite/
+
+# Electron Forge cache
+.cache/
+
+# Compiled files
+*.tsbuildinfo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+*.iml
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Electron-specific files
+electron-builder.yaml
+electron-builder.json
+electron-builder.json5
