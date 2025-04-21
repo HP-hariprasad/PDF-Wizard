@@ -1,0 +1,102 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f5f5f5; /* Light greyish background */
+}
+
+.home-header {
+  background-color: #1f2937; /* Dark header background */
+  color: #ffffff; /* White text */
+  padding: 16px;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically center the content */
+  text-align: left; /* Align text to the left */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.home-main {
+  flex: 1;
+  padding: 24px;
+  background-color: var(--surface-section);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for 5 tabs */
+  gap: 16px;
+}
+
+.feature-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  font-size: 32px;
+  color: #f97316; /* Orange color for icons */
+  margin-bottom: 12px;
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 8px 0;
+  color: var(--surface-900);
+}
+
+.feature-description {
+  font-size: 14px;
+  color: var(--surface-700);
+}
+
+.header-content {
+  display: flex;
+  align-items: center; /* Vertically align icon and text */
+  gap: 8px; /* Space between the icon and the text */
+}
+
+.header-icon {
+  font-size: 28px; /* Adjust icon size */
+  color: #ffffff; /* White color for the icon */
+}
+
+.home-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff; /* White text for the title */
+}
+
+.home-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.main-view {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.home-footer {
+  background-color: var(--surface-section); /* Section background color for the footer */
+  color: var(--surface-700); /* Muted text color */
+  text-align: center;
+  padding: 8px;
+  border-top: 1px solid var(--surface-border); /* Divider color */
+  font-size: 12px;
+}

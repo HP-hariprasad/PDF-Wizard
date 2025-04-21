@@ -1,0 +1,7 @@
+.sidebar-menu {
+  width: 220px;
+  height: 100%;
+  border-right: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+  padding:15px
+}

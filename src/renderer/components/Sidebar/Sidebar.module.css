@@ -1,0 +1,100 @@
+.sidebar {
+  width: 220px;
+  background-color: #f8f9fa; /* Light grey background */
+  border-right: 1px solid #e0e0e0; /* Thin border */
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  transition: width 0.3s ease;
+  position: relative;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.sidebar.expanded {
+  width: 220px; /* Slightly wider for better spacing */
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #444444; /* Divider for the header */
+}
+
+.sidebar.collapsed .toggleHeading {
+  display: none; /* Hide heading when collapsed */
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ffffff; /* White text */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.toggleButton:hover {
+  color: #007bff; /* Blue highlight on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.toggleText {
+  font-size: 14px;
+  color: #495057;
+}
+
+.toggleHeading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff; /* White text */
+  margin: 0;
+}
+
+.tabList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tabItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: #333333; /* Dark grey text */
+  font-size: 14px;
+}
+
+.tabItem:hover {
+  background-color: #e9ecef; /* Light hover effect */
+}
+
+.tabItem.activeTab {
+  background-color: #d3d3d3; /* Subtle highlight for active tab */
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.name {
+  font-size: 14px;
+}
+
+.activeTab {
+  font-weight: bold;
+  color: #0078d4; /* Fluent UI primary color */
+  text-decoration: none;
+}

@@ -1,0 +1,50 @@
+.load-pdf-container {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--surface-card); /* Card surface color */
+  border: 1px solid var(--surface-border); /* Divider color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.load-pdf-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--surface-900); /* Dark text color */
+}
+
+.p-fileupload-content {
+  background-color: var(--surface-section); /* Section background color */
+  border: 1px solid var(--surface-border); /* Divider color */
+  border-radius: 8px;
+}
+
+.p-fileupload-buttonbar {
+  background-color: var(--surface-ground); /* Ground surface color */
+  border-bottom: 1px solid var(--surface-border); /* Divider color */
+}
+
+.p-fileupload-choose,
+.p-fileupload-upload,
+.p-fileupload-cancel {
+  background-color: #007bff; /* Primary button color */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.p-fileupload-choose:hover,
+.p-fileupload-upload:hover,
+.p-fileupload-cancel:hover {
+  background-color: #0056b3; /* Darker primary color on hover */
+}
+
+.p-fileupload-empty-template {
+  font-size: 14px;
+  color: var(--surface-700); /* Muted text color */
+}

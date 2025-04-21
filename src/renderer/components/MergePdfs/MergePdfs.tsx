@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setMergeFiles } from '../../store/features/mergeFiles/mergeFilesReducer';
 import styles from './MergePdfs.module.css';
+import { Button } from '@fluentui/react-components';
 
 // Interface for props
 interface MergePdfsProps {
@@ -27,7 +28,7 @@ const MergePdfs: React.FC<MergePdfsProps> = ({ mergeFiles, setMergeFiles }) => {
     a.download = 'merged.pdf';
     a.click();
   };
-
+ 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files ? Array.from(event.target.files) : [];
     setMergeFiles(files);
@@ -43,11 +44,11 @@ const MergePdfs: React.FC<MergePdfsProps> = ({ mergeFiles, setMergeFiles }) => {
           className={styles.hiddenInput}
           onChange={handleFileChange}
         />
-        <button className="button">📑 Select PDFs to Merge</button>
+        <Button appearance="primary" onClick={handleMergePdfs}>📑 Select PDFs to Merge</Button>
       </label>
-      <button className="button" onClick={handleMergePdfs}>
+      <Button appearance="primary" onClick={handleMergePdfs}>
         ➕ Merge PDFs
-      </button>
+      </Button>
     </div>
   );
 };

@@ -1,0 +1,86 @@
+.watermark-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.watermark-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--surface-900);
+}
+
+.watermark-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.watermark-text-input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid var(--surface-border);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.watermark-button {
+  margin-top: 16px;
+  background-color: #f97316; /* Orange background */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.watermark-button:disabled {
+  background-color: #e0e0e0; /* Grey background for disabled state */
+  color: #a0a0a0; /* Muted text for disabled state */
+  cursor: not-allowed;
+}
+
+.watermark-button:hover:not(:disabled) {
+  background-color: #d65f0e; 
+}
+
+.uploaded-files-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.uploaded-file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--surface-border);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background-color: var(--surface-card);
+}
+
+.file-status {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.file-status.pending {
+  background-color: #ffc107; /* Yellow for pending */
+  color: #ffffff;
+}
+
+.file-status.complete {
+  background-color: #28a745; /* Green for complete */
+  color: #ffffff;
+}

@@ -4,6 +4,9 @@ import { ActionTypes, LoadPdfPayload } from './common/types';
 
 function* loadPdfSaga(action: { type: ActionTypes.LOAD_PDF; payload: LoadPdfPayload }) {
   try {
+    if (!action.payload || !action.payload.file) {
+      throw new Error('Invalid payload: file is undefined');
+    }
     const file = action.payload.file;
     const arrayBuffer = yield call(() => file.arrayBuffer()); // Use `call` for better error handling
     const { PDFDocument } = yield import('pdf-lib');

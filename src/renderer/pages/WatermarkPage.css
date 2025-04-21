@@ -1,0 +1,17 @@
+.watermark-page-container {
+  padding: 24px;
+  background-color: var(--surface-section);
+  height: 100%;
+}
+
+.watermark-breadcrumb {
+  margin-bottom: 16px;
+}
+
+.watermark-page-content {
+  background-color: var(--surface-card);
+  padding: 24px;
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

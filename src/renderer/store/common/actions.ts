@@ -1,7 +1,8 @@
 import { ActionTypes, SetPdfFilePayload, SetMergeFilesPayload } from './types';
 
-export const loadPdf = (): { type: ActionTypes.LOAD_PDF } => ({
+export const loadPdf = (file: File): { type: ActionTypes.LOAD_PDF; payload: { file: File } } => ({
   type: ActionTypes.LOAD_PDF,
+  payload: { file }, // Pass the file as part of the payload
 });
 
 export const setPdfFile = (payload: SetPdfFilePayload): { type: ActionTypes.SET_PDF_FILE; payload: SetPdfFilePayload } => ({
