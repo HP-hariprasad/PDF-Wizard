@@ -4,17 +4,54 @@ import { Button } from 'primereact/button';
 import './Watermark.css';
 import { degrees } from 'pdf-lib';
 
+type FileWithStatus = {
+    file: File;
+    status: 'pending' | 'completed';
+};
+
 const Watermark: React.FC = () => {
     const [watermarkText, setWatermarkText] = useState<string>('');
-    const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+    const [uploadedFiles, setUploadedFiles] = useState<FileWithStatus[]>([]);
 
     const handleWatermarkChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setWatermarkText(event.target.value);
     };
 
-    const handleUpload = (event: any) => {
-        const files = event.files.map((file: File) => file);
-        setUploadedFiles((prevFiles) => [...prevFiles, ...files]);
+    const handleSelect = (event: any) => {
+        const files: FileWithStatus[] = event.files.map((file: File) => ({
+            file,
+            status: 'pending',
+        }));
+        setUploadedFiles(files);
+    };
+
+    const handleUpload = () => {
+        const updated: FileWithStatus[] = uploadedFiles.map((item) => ({
+            ...item,
+            status: 'completed',
+        }));
+        setUploadedFiles(updated);
+
+        // Inject badge updates manually after DOM renders
+        setTimeout(() => {
+            document.querySelectorAll('.p-fileupload-filename').forEach((el) => {
+                const name = el.textContent?.trim();
+                const match = updated.find((f) => f.file.name === name);
+                if (match) {
+                    // Remove existing badge if present
+                    const existingBadge = el.parentElement?.querySelector('.p-badge');
+                    if (existingBadge) existingBadge.remove();
+
+                    // Add new badge
+                    const badge = document.createElement('span');
+                    badge.className = `p-badge p-component ${match.status === 'pending' ? 'p-badge-warning' : 'p-badge-success'}`;
+                    badge.innerText = match.status.charAt(0).toUpperCase() + match.status.slice(1);
+                    badge.style.marginLeft = '1rem';
+
+                    el.parentElement?.appendChild(badge);
+                }
+            });
+        }, 100); // Slight delay to ensure DOM is ready
     };
 
     const handleProcessDocuments = async () => {
@@ -25,10 +62,9 @@ const Watermark: React.FC = () => {
 
         const { PDFDocument, rgb } = await import('pdf-lib');
 
-        for (const file of uploadedFiles) {
-            const objectURL = URL.createObjectURL(file);
-            const response = await fetch(objectURL);
-            const arrayBuffer = await response.arrayBuffer();
+        for (const item of uploadedFiles) {
+            const file = item.file;
+            const arrayBuffer = await file.arrayBuffer();
             const pdfDoc = await PDFDocument.load(arrayBuffer);
 
             const pages = pdfDoc.getPages();
@@ -63,12 +99,13 @@ const Watermark: React.FC = () => {
                     accept="application/pdf"
                     customUpload
                     uploadHandler={handleUpload}
+                    onSelect={handleSelect}
                     multiple
                     chooseLabel="Choose PDF"
                     uploadLabel="Upload"
                     cancelLabel="Cancel"
-                    emptyTemplate={<p className="p-m-0">Drag and drop files here to upload.</p>} 
-                 />
+                    emptyTemplate={<p className="p-m-0">Drag and drop files here to upload.</p>}
+                />
                 <input
                     type="text"
                     placeholder="Enter watermark text"
@@ -82,7 +119,7 @@ const Watermark: React.FC = () => {
                 icon="pi pi-check"
                 className="p-button-orange watermark-button"
                 onClick={handleProcessDocuments}
-                disabled={uploadedFiles.length === 0 || !watermarkText} // Disable button if no files or watermark text
+                disabled={uploadedFiles.length === 0 || !watermarkText}
             />
         </div>
     );
