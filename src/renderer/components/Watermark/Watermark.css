@@ -76,11 +76,21 @@
 }
 
 .file-status.pending {
-  background-color: #ffc107; /* Yellow for pending */
+  background-color: #ffc107; /* Yellow */
   color: #ffffff;
 }
 
 .file-status.complete {
-  background-color: #28a745; /* Green for complete */
+  background-color: #28a745; /* Green */
   color: #ffffff;
+}
+
+.p-badge-warning {
+  background-color: #ffc107 !important;
+  color: white !important;
+}
+
+.p-badge-success {
+  background-color: #28a745 !important;
+  color: white !important;
 }
