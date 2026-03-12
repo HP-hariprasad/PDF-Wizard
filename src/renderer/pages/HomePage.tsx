@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
     {
       title: 'Efficient Compression',
       description: 'Reduce file sizes without losing quality for easier sharing and storage.',
-      icon: 'pi pi-compress-alt',
+      icon: 'pi pi-arrow-down-left-and-arrow-up-right-to-center',
       route: '/compress',
     },
     {
@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
     {
       title: 'Split PDFs',
       description: 'Easily split PDF files to suit your needs.',
-      icon: 'pi pi-columns',
+      icon: 'pi pi-arrows-h',
       route: '/split',
     },
     {
